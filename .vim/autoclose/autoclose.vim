@@ -63,6 +63,11 @@ nmap <Plug>ToggleAutoCloseMappings :call <SID>ToggleAutoCloseMappings()<CR>
 if (!hasmapto( '<Plug>ToggleAutoCloseMappings', 'n' ))
     nmap <unique> <Leader>a <Plug>ToggleAutoCloseMappings
 endif
+
+fun <SID>IsLisp()
+    return match(expand("%"), '.clj$') != -1 || match(expand("%"), '.scm$') != -1
+endf
+
 fun <SID>ToggleAutoCloseMappings() " --- {{{2
     if g:autoclose_on
         iunmap "
@@ -189,7 +194,7 @@ endf
 function <SID>QuoteDelim(char) " ---{{{2
   let line = getline('.')
   let col = col('.')
-  if line[col - 2] == "\\"
+  if line[col - 2] == "\\" || <SID>IsLisp()
     "Inserting a quoted quotation mark into the string
     return a:char
   elseif line[col - 1] == a:char
