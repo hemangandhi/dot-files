@@ -57,6 +57,8 @@ function! RunStuff()
 		endif
 	elseif match(expand("%"), '.clj$') != -1
 		exec ":!clojure " . expand("%:p")
+        elseif match(expand("%"), '.scm$') != 1
+                exec ":!guile -l " . expand("%:p")
 	endif
 endfunction
 map <leader>t :call RunStuff()<cr>
@@ -82,6 +84,7 @@ hi SpellBad ctermbg=white ctermfg=black
 
 "Drag visuals
 runtime dragvisuals/dragvisuals.vim
+runtime autoclose/autoclose.vim
 
 vmap <expr> H DVB_Drag('left')
 vmap <expr> J DVB_Drag('down')
