@@ -1,0 +1,30 @@
+The key bindings on VIM:
+
+direction -> hjkl as in vim.
+
+NORMAL MODE: Moving about window panes: Ctrl + direction
+Save: ,w (insert and normal).
+Quit: ,q (normal).
+Save + quit: ,r (insert and normal).
+
+Spell checker: ,ss (insert and normal).
+Remove highlighting: ", " (normal only).
+Escape: ,e (insert only).
+
+Test code: ,t (normal mode only).
+Save and test: ,y (insert and normal).
+
+Git push: ,gp (normal mode only).
+Commande mode: ,c (normal and insert).
+
+DVB_Drag (visual mode): 
+        Moving text: shift + direction
+        Duplicating text: D
+
+Vertical split: ,p (normal and insert).
+Horizonatal split: ,h (normal and insert).
+
+Paste from clipboard: ,v (normal and insert).
+Copy current line to clipboard: ,x (all modes - copies selection in visual).
+
+Enter a normal mode command from insert mode then return to insert: ,o

@@ -1,0 +1,25 @@
+TMUX Keyboard Shortcuts: (indentation implies a sequence of shortcuts)
+
+<C-a> v = vertical split
+<C-a> " = horiz. split
+<C-a> [hjkl] = move in panes (vim keys).
+<C-a> <space> = next layout.
+
+<C-a>i = join panes
+<C-a>o = send panes
+<C-a>u = break panes
+
+<C-a> ` = copy (vim mode inside that)
+        v = copy start selection
+                <enter> = copy copy into tmux buffer
+                <y> = copy into system clipboard
+<C-a> p = paste from system
+<C-a> ] = paste from tmux
+
+<C-a> x = exit pane
+
+<C-a> n = next window
+<C-a> w = search windows
+<C-a> c = new window
+<C-a> , = rename window
+
