@@ -23,3 +23,6 @@ TMUX Keyboard Shortcuts: (indentation implies a sequence of shortcuts)
 <C-a> c = new window
 <C-a> , = rename window
 
+<C-a> r = reload tmux conf
+
+<C-t> (no prefix) = send prefix.
