@@ -84,7 +84,7 @@ hi SpellBad ctermbg=white ctermfg=black
 
 "Drag visuals
 runtime dragvisuals/dragvisuals.vim
-runtime autoclose/autoclose.vim
+""runtime autoclose/autoclose.vim
 
 vmap <expr> H DVB_Drag('left')
 vmap <expr> J DVB_Drag('down')
