@@ -5,9 +5,11 @@ TMUX Keyboard Shortcuts: (indentation implies a sequence of shortcuts)
 <C-a> [hjkl] = move in panes (vim keys).
 <C-a> <space> = next layout.
 
-<C-a>i = join panes
-<C-a>o = send panes
-<C-a>u = break panes
+<C-a>m = join panes
+<C-a>s = send panes
+<C-a>b = break panes
+
+<C-a> < = send pane to front
 
 <C-a> ` = copy (vim mode inside that)
         v = copy start selection

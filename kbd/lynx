@@ -1,0 +1,12 @@
+The key bindings in lynx:
+
+g = go to url
+/ = search (n for next result, N for previous result)
+j = next link
+k = prev link
+h = prev page
+l = next page
+
+# = go to link or form field. (They're numbered)
+
+Home, end, page up and page down do as expected.
