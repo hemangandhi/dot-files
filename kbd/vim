@@ -4,27 +4,20 @@ direction -> hjkl as in vim.
 
 NORMAL MODE: Moving about window panes: Ctrl + direction
 Save: ,w (insert and normal).
-Quit: ,q (normal).
 Save + quit: ,r (insert and normal).
 
-Spell checker: ,ss (insert and normal).
-Remove highlighting: ", " (normal only).
-Escape: ,e (insert only).
+Completion:
+<C-x><C-n> : keyword local completion. (forward, <C-p> is backward)
+<C-x><C-l> : line local completion.
+<C-x><C-f> : file name completion.
 
-Test code: ,t (normal mode only).
-Save and test: ,y (insert and normal).
+Vim Surround:
+cs<old><new> : changes the surrounding parens or XML-like tag.
+ds<surr> : removes the surrounding the cursor.
+ys<motion/block><surr> : surrounds the motion or block with surr.
+Visual mode: S<surr> : surround S with surr.
 
-Git push: ,gp (normal mode only).
-Commande mode: ,c (normal and insert).
-
-DVB_Drag (visual mode): 
-        Moving text: shift + direction
-        Duplicating text: D
-
-Vertical split: ,p (normal and insert).
-Horizonatal split: ,h (normal and insert).
-
-Paste from clipboard: ,v (normal and insert).
-Copy current line to clipboard: ,x (all modes - copies selection in visual).
-
-Enter a normal mode command from insert mode then return to insert: ,o
+TComment:
+gc<motion> : toggles commenting for <motion> observing file type.
+gcc : toggles commenting for the line.
+Visual: gc toggles, g> forces comment.
