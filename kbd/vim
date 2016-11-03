@@ -21,3 +21,21 @@ TComment:
 gc<motion> : toggles commenting for <motion> observing file type.
 gcc : toggles commenting for the line.
 Visual: gc toggles, g> forces comment.
+
+NERD:
+N = open nerdtree
+j / k = up and down a listing.
+<enter> = open folder
+"/" = search by name (on opened items)
+s = open file in vsplit
+t = open file in tab
+T = open file in tab, but stay on NERD
+q = quit
+i = open in horiz split
+o = open in current thing.
+
+Panes:
+<c-w> + = vertical increase
+<c-w> - = vertical decrease
+<c-w> > = horiz increase
+<c-w> < = horiz decrease

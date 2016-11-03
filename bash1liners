@@ -1,0 +1,38 @@
+#Awesome bash lines!!!!!
+
+./pip list | awk '{print $1}' | grep -v pip | xargs ./pip uninstall -y
+
+#run in /home/heman/pypy-2.5<...>/bin to remove libraries installed by pip.
+
+echo 192.168.0.{0..255} | xargs ping -c 1 | grep "bytes from"
+
+#run anywhere to find things connected to a router... (currently broken)
+
+ps ax | grep python | awk '{print $2}' | xargs kill
+
+#run anywhere to kill a process run by python... (AKA killall python)
+
+ls | grep fn.ccp.[0-9] | xargs rm
+
+#removes any files .cpp.<some number> (useful after gcc -fprint-tree-all)
+
+upower -e | grep battery | xargs upower -i | grep "time to"
+upower -e | grep battery | xargs upower -i
+
+#display battery's time to full or time to empty. And all the battery info...
+
+sed "3q;d" bash1liners | bash
+
+#runs the first 1 liner by reading this file.
+
+find -newer file1 -not -newer file2 -exec "{}" "dir/{}" \;
+
+#find all files made between file1 and file2 and move them into dir.
+
+tr -d '\000' < input-file > output
+
+#remove all null bytes from a file.
+
+man -k value | less
+
+#see man's entries matching the regex value. Pipe to less to explore the result.
