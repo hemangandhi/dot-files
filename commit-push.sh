@@ -1,7 +1,7 @@
 #! /usr/bin/sh
 
 cp ~/.tmux.conf .
-cp -r ~/.vim .
+#cp -r ~/.vim .
 cp ~/.vimrc .
 
 cp -r ~/.ssh .

@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " ------Plugins-------
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'gcmt/breeze.vim'
 Plugin 'kien/ctrlp.vim'
@@ -20,7 +21,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
 
 " Color Themes
@@ -68,7 +69,7 @@ set wildmenu
 set autoread
 
 set encoding=utf-8
-set tabstop=4 shiftwidth=2 expandtab
+set tabstop=4 shiftwidth=4 expandtab
 set listchars=tab:▒░,trail:▓
 set list
 
@@ -143,9 +144,9 @@ let g:tcomment#replacements_xml={}
 " Text wrap simpler, then type the open tag or ',"
 vmap <C-w> S
 " Cut, Paste, Copy
-vmap <C-x> d
-vmap <C-v> p
-vmap <C-c> y
+"vmap <C-x> d
+"vmap <C-v> p
+"vmap <C-c> y
 " Undo, Redo (broken)
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
@@ -164,8 +165,8 @@ nnoremap <C-n>  :tabnext<CR>
 inoremap <C-n>  <Esc>:tabnext<CR>i
 nnoremap <C-t>  :tabnew<CR>
 inoremap <C-t>  <Esc>:tabnew<CR>i
-nnoremap <C-w>  :tabclose<CR>
-inoremap <C-w>  <Esc>:tabclose<CR>i
+nnoremap <C-x>  :tabclose<CR>
+inoremap <C-x>  <Esc>:tabclose<CR>i
 
 " lazy ':'
 map \ :
