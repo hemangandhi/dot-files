@@ -29,5 +29,7 @@ TMUX Keyboard Shortcuts: (indentation implies a sequence of shortcuts)
 
 <C-t> (no prefix) = send prefix.
 
+<C-a> d = detach
+
 <C-a> t = mouse on
 <C-a> T = mouse off

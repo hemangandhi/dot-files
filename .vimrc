@@ -83,10 +83,6 @@ set smartcase
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
 
 " do not history when leavy buffer
 set hidden
@@ -169,6 +165,7 @@ nnoremap <C-x>  :tabclose<CR>
 inoremap <C-x>  <Esc>:tabclose<CR>i
 
 " lazy ':'
+
 map \ :
 
 let mapleader = ','
@@ -180,6 +177,9 @@ nnoremap <Leader>r :wq<CR>
 inoremap <Leader>w <ESC>:w<CR>a
 inoremap <Leader>r <ESC>:wq<CR>
 
+" In many terminal emulators the mouse works just fine, thus enable it.
+nnoremap <Leader>m :set mouse=a<CR>
+nnoremap <Leader>M :set mouse=""<CR>
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

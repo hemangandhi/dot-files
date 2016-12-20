@@ -25,7 +25,7 @@ sed "3q;d" bash1liners | bash
 
 #runs the first 1 liner by reading this file.
 
-find -newer file1 -not -newer file2 -exec "{}" "dir/{}" \;
+find -newer file1 -not -newer file2 -exec "mv" "{}" "dir/{}" \;
 
 #find all files made between file1 and file2 and move them into dir.
 
@@ -36,3 +36,7 @@ tr -d '\000' < input-file > output
 man -k value | less
 
 #see man's entries matching the regex value. Pipe to less to explore the result.
+
+echo "#include <sys/types.h>" | gcc -E -x c - | grep /types.h
+
+#find where a particular library is from gcc...
