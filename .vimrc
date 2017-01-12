@@ -28,6 +28,10 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
+
+set term=screen-256color
+set t_Co=256
+
 colorscheme Monokai
 filetype plugin indent on
 
