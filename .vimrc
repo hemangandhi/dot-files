@@ -4,7 +4,7 @@
 " Updated by Dorian Neto (https://github.com/dorianneto)"
 
 set nocompatible
-filetype off
+filetype plugin on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -29,8 +29,10 @@ Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 
+"Doug changes
 set term=screen-256color
 set t_Co=256
+setlocal foldmethod=syntax
 
 colorscheme Monokai
 filetype plugin indent on

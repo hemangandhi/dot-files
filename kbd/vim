@@ -5,6 +5,24 @@ direction -> hjkl as in vim.
 NORMAL MODE: Moving about window panes: Ctrl + direction
 Save: ,w (insert and normal).
 Save + quit: ,r (insert and normal).
+K = open word's man page.
+J = combine with line below
+
+FOLDING FUNCTIONS:
+zf#[d] = folds from the cursor in direction
+zf/ = fold to search result
+zj = to next fold
+zk = to previous fold
+zo = open curr fold
+zO = open all folds
+zm = increases the fold level by one
+zM = closes all open folds
+zr = decrease fold level by one
+zR = set all fold levels to 0 (opens all folds)
+zd = deletes fold at cursor
+zE = deletes all folds
+[z = move to start of open fold
+]z = move to end of the open fold
 
 Completion:
 <C-x><C-n> : keyword local completion. (forward, <C-p> is backward)
