@@ -8,7 +8,7 @@ cp -r ~/.ssh .
 
 cp -r ~/.vim/ftplugin .
 
-cp-r ~/.bashrc
+cp -r ~/.bashrc
 
 git add -A
 git commit -m "$1"
