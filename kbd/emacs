@@ -32,3 +32,17 @@ Evil mode: Everything in vim without the comma works.
 -> vsp, sp work
 -> :! works as do :w and :q
 -> <C-w> is as expected.
+
+Magit:
+magit-<cmd> will usually work.
+<C-c><C-c> to exit the commit file
+
+Dired buffers:
+R = rename (anything)
+
+Package list:
+i = install package
+d = delete
+u = unmark
+U = update all
+x = execute
