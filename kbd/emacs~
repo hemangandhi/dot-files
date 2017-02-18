@@ -24,6 +24,8 @@ M = alt
 <C-x> 4 0    = kill window and buffer
 <C-x> k      = kill buffer (will prompt for name)
 
+<C-a><C-k>   = remove everything in minibuffer
+
 Terminal mode: <C-x> is <C-c> and <M-x> is different (idk)
 
 Evil mode: Everything in vim without the comma works.

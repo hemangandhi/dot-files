@@ -26,7 +26,7 @@ M = alt
 
 <C-a><C-k>   = remove everything in minibuffer
 
-Terminal mode: <C-x> is <C-c> and <M-x> is different (idk)
+Terminal mode: <C-x> is <C-c> and <M-x> is <C-c><M-x>
 
 Evil mode: Everything in vim without the comma works.
 -> vsp, sp work
