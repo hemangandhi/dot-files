@@ -3,11 +3,13 @@ M = alt
 <M-(number)> can be entered before another key combination to pass an argument.
 
 <C-x> <C-f> = find a file.
+<f1>        = terminal
 <C-h> k     = help on a key combination (enter the key combination after k).
 <C-x> <C-s> = write.
 <C-x> s     = for each buffer, ask and then write.
 <C-x> o     = go to other window
 <C-x> b     = switch buffers.
+<C-x> r     = rename buffer.
 <C-x> <C-b> = list buffers.
 <C-x> <C-c> = exit. Prompts for saving.
 <C-g>       = cancel command.
@@ -18,7 +20,7 @@ M = alt
 <M-x> is like ":":
       text-mode = for editing text
       kill-some-buffers = be prompted to kill buffers one by one
-      rename-buffer = be prompted for the name to change the current buffer to
+      untabify = make tabs spaces preserving columns
 
 <C-w> [hjkl] = window movement
 <C-x> 4 0    = kill window and buffer
@@ -39,6 +41,15 @@ magit-<cmd> will usually work.
 
 Dired buffers:
 R = rename (anything)
+C = copy selected (can tag many)
+D = delete
+g = refresh
+M = chmod
+P = print
+c (dired-do-compress-to) = compress the files (algo. by extension)
+A = grep with regexp
+Q = find and replace with regexp
+m = mark file
 
 Package list:
 i = install package
