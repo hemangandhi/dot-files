@@ -4,6 +4,7 @@
 " Updated by Dorian Neto (https://github.com/dorianneto)"
 
 set nocompatible
+set belloff=all
 filetype plugin on
 
 set rtp+=~/.vim/bundle/Vundle.vim

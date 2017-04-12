@@ -1,0 +1,15 @@
+Config { font = "Ubuntu"
+       , fgColor = "white"
+       , bgColor = "black"
+       , position = Top
+       , lowerOnStart = False
+       , allDesktops = True
+       , hideOnStart = False
+       , commands = [ Run Date "%a %_d %b %Y %H:%M:%S" "date" 10
+                    , Run Com "/bin/bash" ["-c", "acpi | awk '{print $3, $4, $5}'"] "myBat" 100
+                    , Run Com "/bin/bash" ["-c", "amixer | grep \"Front Left:\" | head -1 | awk '{print $5, $6}'"] "myVol" 10
+                    --, Run Wireless wlan0 ["-t", "<essid>"] 10
+                    , Run StdinReader
+                    ]
+       , template = "%StdinReader% } { %myBat% | %myVol% | %date%"
+       }

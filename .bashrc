@@ -81,7 +81,6 @@ fi
 # if hash figlet 2>/dev/null; then
 #   figlet "Hey $(whoami)" | lolcat && \
 #   fortune | cowsay | lolcat && \
-date && cal
 # fi
 
 if [ -f /etc/redhat-release ]; then
@@ -125,6 +124,8 @@ source $HOME/.bash_prompt
 
 export WWW_HOME="http://www.google.com"
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/mongo/mongodb-linux-x86_64-ubuntu1604-3.2.10/bin
+export TZ="/usr/share/zoneinfo/America/New_York"
+date && cal
 
 stty -ixon
 #tmux -2
