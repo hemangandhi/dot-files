@@ -1,0 +1,15 @@
+mod = windows key
+
+<mod-#> = move to workspace #
+<shift-mod-#> = move current window to workspace #
+<mod-shift-enter> = open terminal
+<mod-shift-c> = close current window
+<mod-j> = move to window "clockwise"
+<mod-k> = move to window "anti-clockwise"
+<mod-p> = use rofi to run a program
+<mod-w> = search open windows (will switch to them)
+<mod-q> = reload config
+<shfit-mod-q> = quit
+<mod-space> = change layouts (current window can be made full-screen)
+<mod-.> = increment the number of vertical windows
+<mod-,> = decrement the number of vertical windows

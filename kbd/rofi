@@ -1,0 +1,4 @@
+
+tab = select next
+<ctrl-space> = move current text into the top bar
+<ctrl-v> = paste
