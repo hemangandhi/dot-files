@@ -30,4 +30,7 @@ main = do
         `additionalKeys`
         [((mod4Mask, xK_p), spawn "rofi -modi \"run,ssh\" -show \"run\" -font \"Ubuntu 14\""),
          ((mod4Mask, xK_w), gotoMenuConfig myBringer),
-         ((mod4Mask, xK_r), renameWorkspace def)]
+         ((mod4Mask, xK_r), renameWorkspace def),
+         ((mod4Mask .|. shiftMask, xK_Left), swapTo Prev),
+         ((mod4Mask .|. shiftMask, xK_Right), swapTo Next)
+         ]
