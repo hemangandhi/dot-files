@@ -4,7 +4,7 @@ cp ~/.tmux.conf .
 #cp -r ~/.vim .
 cp ~/.vimrc .
 cp ~/.inputrc .
-cp ~/.zshrc
+cp ~/.zshrc .
 
 cp -r ~/.ssh .
 
