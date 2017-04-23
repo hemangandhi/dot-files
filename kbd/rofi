@@ -1,4 +1,5 @@
 
 tab = select next
 <ctrl-space> = move current text into the top bar
+<ctrl-enter> = run command in the search bar (instead of accepting suggestion)
 <ctrl-v> = paste

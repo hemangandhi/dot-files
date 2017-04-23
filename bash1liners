@@ -40,3 +40,7 @@ man -k value | less
 echo "#include <sys/types.h>" | gcc -E -x c - | grep /types.h
 
 #find where a particular library is from gcc...
+
+pacman -Syu
+
+#Update everything
