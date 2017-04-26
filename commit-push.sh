@@ -13,6 +13,7 @@ cp -r ~/.vim/ftplugin .
 cp -r ~/.bashrc .
 cp -r ~/.bash_prompt .
 cp -r ~/.bash_git .
+cp -r ~/.bash_aliases .
 
 cp ~/.emacs.d/init.el .
 
