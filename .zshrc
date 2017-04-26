@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/mongo/mongodb-linux-x86_64-ubuntu1604-3.2.10/bin
+#bindkey -v
+export KEYTIMEOUT=1
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/heman/.oh-my-zsh
+export ZSH=/home/heman/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -29,7 +32,7 @@ ZSH_THEME="candy"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -47,11 +50,13 @@ ZSH_THEME="candy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# MODE_INDICATOR="%{$fg_bold[green]%} [% NORMAL]% %{$reset_color%}"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,5 +89,23 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# function zle-line-init zle-keymap-select {
+#     VIM_PROMPT="%{$fg_bold[yellow]%} [%NORMAL]% %{$reset_color%}"
+#     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+#     zle reset-prompt
+# }
+
+#zle -N zle-line-init
+# zle -N zle-keymap-select
+
 zstyle ':completion:*' menu select
+export TZ="/usr/share/zoneinfo/America/New_York"
 source ~/.bash_aliases
+
+background (){
+    "$@" &
+}
+
+alias -s pdf='background apvlv'
+alias -s {c,h,cpp,py,js,tex,csv}=vim
+alias -s {png,jpg}='background gimp'
