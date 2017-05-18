@@ -1,0 +1,4 @@
+After mouse selecting a part of the terminal:
+<ctrl-alt-c> = copy
+
+<ctrl-alt-v> = paste

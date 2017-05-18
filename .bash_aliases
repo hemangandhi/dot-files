@@ -6,9 +6,11 @@ calc(){
     bc -l <<< "$@"
 }
 
-gg(){
-    git add -A
-    git commit -m "On `date`: $1"
-    git push
-}
+# gg(){
+#     git add -A
+#     git commit -m "On `date`: $1"
+#     git push
+# }
 
+alias l='ls'
+export WWW_HOME="http://www.google.com"

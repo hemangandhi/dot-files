@@ -3,13 +3,33 @@ mod = windows key
 <mod-#> = move to workspace #
 <shift-mod-#> = move current window to workspace #
 <mod-shift-enter> = open terminal
-<mod-shift-c> = close current window
 <mod-j> = move to window "clockwise"
 <mod-k> = move to window "anti-clockwise"
-<mod-p> = use rofi to run a program
-<mod-w> = search open windows (will switch to them)
 <mod-q> = reload config
 <shfit-mod-q> = quit
 <mod-space> = change layouts (current window can be made full-screen)
 <mod-.> = increment the number of vertical windows
 <mod-,> = decrement the number of vertical windows
+<mod-t> = open "scratchpad" (currently just a terminal)
+
+<f4> = close current window
+<f1 - 3> = volume control
+<f6> = disable touchpad
+<f7> = flight mode
+<f8> = close window to go to.
+<f9> = blank screen
+<f10> = rofi
+<menu button (right of alt)> = rofi
+<prtsc> = print screen
+
+Notes on multi-head:
+    -> The current workspace is yellow. Workspaces on other displays are in angle brackets (on xmobar)
+    -> Focus is always indicated in yellow.
+    -> Moving to a workspace on another display either moves that workspace to that display or swaps
+       if the destination is being displayed elsewhere.
+<mod-w> = move focus to display 1
+<mod-e> = move focus to display 2
+<mod-r> = move focus to display 3
+<mod-w> = move window to display 1
+<mod-e> = move window to display 2
+<mod-r> = move window to display 3

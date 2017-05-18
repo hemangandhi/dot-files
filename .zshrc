@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/mongo/mongodb-linux-x86_64-ubuntu1604-3.2.10/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin
 #bindkey -v
 export KEYTIMEOUT=1
 
@@ -56,7 +56,7 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #
-plugins=(git vi-mode)
+plugins=(web-search urltools globalias git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,9 +103,10 @@ export TZ="/usr/share/zoneinfo/America/New_York"
 source ~/.bash_aliases
 
 background (){
-    "$@" &
+    ("$@" &!) 2> /dev/null
 }
 
 alias -s pdf='background apvlv'
-alias -s {c,h,cpp,py,js,tex,csv}=vim
+alias -s {c,h,cpp,py,js,tex,csv,hs,txt}=vim
 alias -s {png,jpg}='background gimp'
+alias copy='xclip -in -selection clipboard <'
