@@ -64,7 +64,8 @@ main = do
          ((0 .|. shiftMask, xF86XK_AudioLowerVolume), spawn "amixer sset Capture 5%-"),
          ((0, 0xffe4), gotoMenuConfig myBringer),
          ((0, 0xffc1), kill),
+         ((0, 0xffc2), sendMessage NextLayout),
          ((0, 0xff61), spawn "scrot"),
-         ((0, 0xff67), spawn "rofi -modi \"run,ssh\" -show \"run\" -font \"Ubuntu 14\"")
+         ((0, 0xff67), spawn "urxvt")
          -- ((0, 0xffeb), spawn "urxvt -e zsh -c \"xrandr && zsh\"")
          ]

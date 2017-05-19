@@ -12,13 +12,15 @@ mod = windows key
 <mod-,> = decrement the number of vertical windows
 <mod-t> = open "scratchpad" (currently just a terminal)
 
-<f4> = close current window
 <f1 - 3> = volume control
+<f4> = close current window
+<f5> = next layout algorithm (resizable tall, full, 3 col, spiral)
 <f6> = disable touchpad
 <f7> = flight mode
 <f8> = close window to go to.
 <f9> = blank screen
 <f10> = rofi
+<f11-2> = brigthness (as desired)
 <menu button (right of alt)> = rofi
 <prtsc> = print screen
 
@@ -26,10 +28,10 @@ Notes on multi-head:
     -> The current workspace is yellow. Workspaces on other displays are in angle brackets (on xmobar)
     -> Focus is always indicated in yellow.
     -> Moving to a workspace on another display either moves that workspace to that display or swaps
-       if the destination is being displayed elsewhere.
+       if the destination is being displayed elsewhere. (So that the current is display where the old was.)
 <mod-w> = move focus to display 1
 <mod-e> = move focus to display 2
 <mod-r> = move focus to display 3
-<mod-w> = move window to display 1
-<mod-e> = move window to display 2
-<mod-r> = move window to display 3
+<mod-shift-w> = move window to display 1
+<mod-shift-e> = move window to display 2
+<mod-shift-r> = move window to display 3
