@@ -10,6 +10,7 @@ Config { font = "Ubuntu"
                     , Run Com "/bin/bash" ["-c", "amixer | grep \"Front Left:\" | head -1 | awk '{print $5, $6}'"] "myVol" 10
                     --, Run Wireless wlan0 ["-t", "<essid>"] 10
                     , Run StdinReader
+                    , Run Com "/bin/bash" ["-c", "who | awk '{print $1}'"] "myName" 0
                     ]
-       , template = "%StdinReader% } { %myBat% | %myVol% | %date%"
+       , template = "%StdinReader% } { %myName% :: %myBat% -> %myVol% -> %date%"
        }

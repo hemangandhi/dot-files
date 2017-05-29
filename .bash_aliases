@@ -1,6 +1,7 @@
 alias chkMath='bash ~/coding/randomProgramming/chkMath/chk.sh' 
 alias pSrv='~/coding/randomProgramming/cmdln_py/pop_up_srv.py'
 alias tabula='java -Dfile.encoding=utf-8 -Xms256M -Xmx1024M -jar ~/tabula/tabula.jar'
+alias printers='systemctl start org.cups.cupsd.service'
 
 calc(){
     bc -l <<< "$@"

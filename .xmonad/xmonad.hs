@@ -64,7 +64,9 @@ main = do
          ((0 .|. shiftMask, xF86XK_AudioLowerVolume), spawn "amixer sset Capture 5%-"),
          ((0, 0xffe4), gotoMenuConfig myBringer),
          ((0, 0xffc1), kill),
+         ((mod4Mask , 0xffc1), spawn "systemctl suspend && slock"),
          ((0, 0xffc2), sendMessage NextLayout),
+         ((0 .|. shiftMask, 0xffc2), sendMessage FirstLayout),
          ((0, 0xff61), spawn "scrot"),
          ((0, 0xff67), spawn "urxvt")
          -- ((0, 0xffeb), spawn "urxvt -e zsh -c \"xrandr && zsh\"")
