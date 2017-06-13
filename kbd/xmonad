@@ -5,7 +5,15 @@ mod = windows key
 <mod-shift-enter> = open terminal
 <mod-j> = move to window "clockwise"
 <mod-k> = move to window "anti-clockwise"
+<mod-h> = move window "clockwise"
+<mod-l> = move window "anti-clockwise"
+<mod-shift-h> = move divider left (resizing)
+<mod-shift-l> = move divider right (resizing)
+Only resizable tall:
+    <mod-shift-j> = move divider up (resizing)
+    <mod-shift-k> = move divider down (resizing)
 <mod-q> = reload config
+<mod-enter> = reset layout
 <shfit-mod-q> = quit
 <mod-space> = change layouts (current window can be made full-screen)
 <mod-.> = increment the number of vertical windows
