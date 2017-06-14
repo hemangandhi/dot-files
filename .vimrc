@@ -38,6 +38,7 @@ setlocal foldmethod=syntax
 colorscheme Monokai
 filetype plugin indent on
 
+let mapleader = ','
 "make my old thing happier.
 let g:jedi#rename_command = "<leader>c"
 """"""""
@@ -67,6 +68,7 @@ set incsearch
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
+nnoremap <Leader>n :nohl<CR>
 
 set laststatus=2
 set ruler
@@ -95,9 +97,9 @@ map Q gq
 set hidden
 
 " FIXME: (broken) ctrl s to save
-noremap  <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <Esc>:update<CR>
+" noremap  <C-S> :update<CR>
+" vnoremap <C-S> <C-C>:update<CR>
+" inoremap <C-S> <Esc>:update<CR>
 
 set nobackup
 set nowritebackup
@@ -105,7 +107,7 @@ set noswapfile
 set fileformats=unix,dos,mac
 
 " exit insert mode
-inoremap <C-c> <Esc>
+inoremap <Leader>e <Esc>
 
 set completeopt=menuone,longest,preview
 
@@ -114,7 +116,7 @@ set completeopt=menuone,longest,preview
 "
 
 " NERDTree
-nnoremap <S-n> :NERDTreeToggle<CR>
+nnoremap <Leader>t :NERDTreeToggle<CR>
 
 " CtrlP
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
@@ -136,13 +138,13 @@ let g:airline_powerline_fonts = 1
 "
 
 " Find
-map <C-f> /
-" indend / deindent after selecting the text with (⇧ v), (.) to repeat.
-vnoremap <Tab> >
-vnoremap <S-Tab> <
+" map <C-f> /
+" " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
+" vnoremap <Tab> >
+" vnoremap <S-Tab> <
 " comment / decomment & normal comment behavior
-vmap <C-m> gc
-" Disable tComment to escape some entities
+" vmap <C-m> gc
+" " Disable tComment to escape some entities
 let g:tcomment#replacements_xml={}
 " Text wrap simpler, then type the open tag or ',"
 vmap <C-w> S
@@ -155,27 +157,27 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
-nnoremap <C-z>  :undo<CR>
-inoremap <C-z>  <Esc>:undo<CR>
-nnoremap <C-y>  :redo<CR>
-inoremap <C-y>  <Esc>:redo<CR>
+" nnoremap <C-z>  :undo<CR>
+" inoremap <C-z>  <Esc>:undo<CR>
+" nnoremap <C-y>  :redo<CR>
+" inoremap <C-y>  <Esc>:redo<CR>
 " Tabs
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
-nnoremap <C-b>  :tabprevious<CR>
-inoremap <C-b>  <Esc>:tabprevious<CR>i
-nnoremap <C-n>  :tabnext<CR>
-inoremap <C-n>  <Esc>:tabnext<CR>i
-nnoremap <C-t>  :tabnew<CR>
-inoremap <C-t>  <Esc>:tabnew<CR>i
-nnoremap <C-x>  :tabclose<CR>
-inoremap <C-x>  <Esc>:tabclose<CR>i
+" nnoremap <C-b>  :tabprevious<CR>
+" inoremap <C-b>  <Esc>:tabprevious<CR>i
+" nnoremap <C-n>  :tabnext<CR>
+" inoremap <C-n>  <Esc>:tabnext<CR>i
+" nnoremap <C-t>  :tabnew<CR>
+" inoremap <C-t>  <Esc>:tabnew<CR>i
+" nnoremap <C-x>  :tabclose<CR>
+" inoremap <C-x>  <Esc>:tabclose<CR>i
 
 " lazy ':'
 
 map \ :
 
-let mapleader = ','
+nnoremap <Leader><tab> :set tabstop=2 shiftwidth=2<CR>
 nnoremap <Leader>p :set paste<CR>
 nnoremap <Leader>o :set nopaste<CR>
 noremap  <Leader>g :GitGutterToggle<CR>
