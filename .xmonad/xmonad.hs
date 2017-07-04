@@ -47,7 +47,7 @@ main = do
          ((mod4Mask, xK_r), renameWorkspace def),
          ((mod4Mask .|. shiftMask, xK_Left), swapTo Prev),
          ((mod4Mask .|. shiftMask, xK_Right), swapTo Next),
-         ((mod4Mask, xK_t), scratchpadSpawnActionCustom "urxvt -c zsh -e ranger"),
+         ((mod4Mask, xK_t), scratchpadSpawnActionTerminal "urxvt"),
          ((mod4Mask .|. shiftMask, xK_h), sendMessage Expand),
          ((mod4Mask .|. shiftMask, xK_l), sendMessage Shrink),
          ((mod4Mask .|. shiftMask, xK_k), sendMessage MirrorExpand),

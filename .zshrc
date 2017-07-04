@@ -4,6 +4,8 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin
 #bindkey -v
 export KEYTIMEOUT=1
 
+export RANGERCD=true
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/heman/.oh-my-zsh
 
