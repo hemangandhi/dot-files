@@ -1,8 +1,3 @@
-" vim-sublime - A minimal Sublime Text - like vim experience bundle
-"               http://github.com/grigio/vim-sublime
-" Best view with a 256 color terminal and Powerline fonts
-" Updated by Dorian Neto (https://github.com/dorianneto)"
-
 set nocompatible
 set belloff=all
 filetype plugin on
