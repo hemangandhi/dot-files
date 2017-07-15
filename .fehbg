@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --bg-scale '/home/heman/.config/backgrounds/rock_metro_map.jpg' '/home/heman/.config/backgrounds/future_tokyo.jpg' '/home/heman/.config/backgrounds/tube_map.gif' '/home/heman/.config/backgrounds/future_london.jpg' '/home/heman/.config/backgrounds/tokyo_metro_map.jpg' '/home/heman/.config/backgrounds/world_metro_map.jpg' '/home/heman/.config/backgrounds/future_nyc.jpg' 
+feh  --bg-scale '/home/heman/.config/backgrounds/rock_metro_map.jpg' '/home/heman/.config/backgrounds/world_metro_map.jpg' '/home/heman/.config/backgrounds/future_london.jpg' '/home/heman/.config/backgrounds/tube_map.gif' '/home/heman/.config/backgrounds/future_tokyo.jpg' '/home/heman/.config/backgrounds/tokyo_metro_map.jpg' '/home/heman/.config/backgrounds/future_nyc.jpg' 

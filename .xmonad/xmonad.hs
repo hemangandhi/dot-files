@@ -7,11 +7,12 @@ import XMonad.Util.Scratchpad
 import XMonad.Actions.WindowBringer
 import XMonad.Actions.WorkspaceNames
 import XMonad.Layout.NoBorders (smartBorders)
-import XMonad.Layout.ThreeColumns
 import XMonad.Layout.Spiral
+import XMonad.Layout.Grid
+import XMonad.Layout.Tabbed
+import XMonad.Layout.BinarySpacePartition
 import XMonad.Layout.ResizableTile
 import Graphics.X11.ExtraTypes.XF86
--- import Layout.Nested
 
 import qualified XMonad.StackSet as W
 
@@ -21,16 +22,12 @@ myBringer = WindowBringerConfig
             , windowTitler = windowTitler (def :: WindowBringerConfig)
             }
 
--- myLayouts = (myTiles ||| Mirror myTiles ||| Full  ||| my3Col ||| mySpiral ||| myResize)
-myLayouts = (myResize ||| Full ||| my3Col ||| mySpiral )
+myLayouts = (simpleTabbed ||| mySpiral ||| emptyBSP ||| Grid)
     where nmaster  = 1
           ratio    = 1/2
           delta    = 2/100
-          -- myTiles  = Tall nmaster delta ratio
-          my3Col   = ThreeCol nmaster delta ratio
           mySpiral = spiral ratio
-          myResize = ResizableTall nmaster delta ratio []
-          -- nested   = NestedLayout ["ChangeLayout", "NextNoWrap"] (myTiles ||| Mirror myTiles ||| Full)
+          -- myResize = ResizableTall nmaster delta ratio []
 
 
 main = do
