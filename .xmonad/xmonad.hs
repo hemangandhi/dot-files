@@ -23,7 +23,7 @@ myBringer = WindowBringerConfig
             , windowTitler = windowTitler (def :: WindowBringerConfig)
             }
 
-myLayouts = (simpleTabbed ||| mySpiral ||| emptyBSP ||| Grid)
+myLayouts = (Grid ||| simpleTabbed ||| mySpiral ||| emptyBSP)
     where nmaster  = 1
           ratio    = 1/2
           delta    = 2/100
