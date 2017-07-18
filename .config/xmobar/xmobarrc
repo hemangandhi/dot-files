@@ -4,6 +4,7 @@ Config { font = "Ubuntu"
        , position = Top
        , lowerOnStart = False
        , allDesktops = True
+       , alpha = 126
        , hideOnStart = False
        , commands = [ Run Date "%a %_d %b %Y %H:%M:%S" "date" 10
                     , Run Com "/bin/bash" ["-c", "acpi | awk '{print $3, $4, $5}'"] "myBat" 100

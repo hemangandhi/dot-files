@@ -6,6 +6,7 @@ import XMonad.Util.EZConfig (additionalKeys, removeKeys)
 import XMonad.Util.Scratchpad
 import XMonad.Actions.WindowBringer
 import XMonad.Actions.WorkspaceNames
+import XMonad.Actions.Navigation2D
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.Spiral
 import XMonad.Layout.Grid
@@ -45,14 +46,6 @@ main = do
          ((mod4Mask .|. shiftMask, xK_Left), swapTo Prev),
          ((mod4Mask .|. shiftMask, xK_Right), swapTo Next),
          ((mod4Mask, xK_t), scratchpadSpawnActionTerminal "urxvt"),
-         ((mod4Mask .|. shiftMask, xK_h), sendMessage Expand),
-         ((mod4Mask .|. shiftMask, xK_l), sendMessage Shrink),
-         ((mod4Mask .|. shiftMask, xK_k), sendMessage MirrorExpand),
-         ((mod4Mask .|. shiftMask, xK_j), sendMessage MirrorShrink),
-         ((mod4Mask, xK_j), windows W.focusDown),
-         ((mod4Mask, xK_k), windows W.focusUp),
-         ((mod4Mask, xK_h), windows W.swapUp),
-         ((mod4Mask, xK_l), windows W.swapDown),
          ((0, xF86XK_AudioMute), spawn "amixer sset Master toggle"),
          ((0, xF86XK_AudioRaiseVolume), spawn "amixer sset Master 5%+"),
          ((0, xF86XK_AudioLowerVolume), spawn "amixer sset Master 5%-"),
@@ -65,6 +58,14 @@ main = do
          ((0, 0xffc2), sendMessage NextLayout),
          ((0 .|. shiftMask, 0xffc2), sendMessage FirstLayout),
          ((0, 0xff61), spawn "scrot"),
-         ((0, 0xff67), spawn "urxvt")
-         -- ((0, 0xffeb), spawn "urxvt -e zsh -c \"xrandr && zsh\"")
+         ((0, 0xff67), spawn "urxvt"),
+         --navigation 2D
+         ((mod4Mask, xK_h), windowGo L True),
+         ((mod4Mask, xK_j), windowGo D True),
+         ((mod4Mask, xK_k), windowGo U True),
+         ((mod4Mask, xK_l), windowGo R True),
+         ((mod4Mask .|. shiftMask, xK_h), windowSwap L True),
+         ((mod4Mask .|. shiftMask, xK_j), windowSwap D True),
+         ((mod4Mask .|. shiftMask, xK_k), windowSwap U True),
+         ((mod4Mask .|. shiftMask, xK_l), windowSwap R True)
          ]
