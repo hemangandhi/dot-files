@@ -108,7 +108,7 @@ background (){
     ("$@" &!) 2> /dev/null
 }
 
-alias -s pdf='background apvlv'
+alias -s pdf='background zathura'
 alias -s {c,h,cpp,py,js,tex,csv,hs,txt}=vim
 alias -s {png,jpg}='background feh'
 alias copy='xclip -in -selection clipboard <'
