@@ -6,6 +6,7 @@ cp ~/.inputrc .
 cp ~/.zshrc .
 cp ~/.xinitrc .
 cp ~/.Xresources .
+cp ~/.Xmodmap .
 
 cp ~/.compton.conf .
 cp ~/.fehbg .

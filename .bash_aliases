@@ -19,3 +19,11 @@ export WWW_HOME="http://www.google.com"
 al () {
     alias | grep "$1"
 }
+
+rng () {
+    if [ -z $RANGER_LEVEL ]; then
+        ranger
+    else
+        exit
+    fi
+}
