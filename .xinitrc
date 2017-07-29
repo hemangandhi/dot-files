@@ -1,5 +1,5 @@
 xrdb -merge ~/.Xresources
-xmodpam ~/.Xmodmap
+xmodmap ~/.Xmodmap
 compton -cb --config ~/.compton.conf
 
 feh -D 60 --randomize --bg-scale ~/.config/backgrounds/*
