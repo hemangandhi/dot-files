@@ -18,7 +18,7 @@ Only resizable tall:
 <mod-space> = change layouts (current window can be made full-screen)
 <mod-.> = increment the number of vertical windows
 <mod-,> = decrement the number of vertical windows
-<mod-t> = open "scratchpad" (currently just a terminal)
+<mod-s> = open "scratchpad" (currently just a terminal)
 
 <f1 - 3> = volume control
 <f4> = close current window
@@ -43,3 +43,8 @@ Notes on multi-head:
 <mod-shift-w> = move window to display 1
 <mod-shift-e> = move window to display 2
 <mod-shift-r> = move window to display 3
+
+Floating windows:
+<mod-left> = move a window floating
+<mod-right> = resize window... click + drag.
+<mod-t> = tile window
