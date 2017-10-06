@@ -109,7 +109,8 @@ background (){
 }
 
 alias -s pdf='background zathura'
-alias -s {c,h,cpp,py,js,tex,csv,hs,txt}=vim
+alias -s {c,h,cpp,py,md,js,tex,csv,hs,txt}=vim
 alias -s {png,jpg}='background feh'
+alias -s {docx, xlsx, pptx}='background libreoffice'
 alias copy='xclip -in -selection clipboard <'
 alias rngl='echo $RANGER_LEVEL'

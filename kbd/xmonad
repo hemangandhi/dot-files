@@ -47,4 +47,5 @@ Notes on multi-head:
 Floating windows:
 <mod-left> = move a window floating
 <mod-right> = resize window... click + drag.
+              Also brings window to the top
 <mod-t> = tile window

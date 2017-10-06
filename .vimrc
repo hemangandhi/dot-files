@@ -1,6 +1,6 @@
 set nocompatible
 set belloff=all
-filetype plugin on
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,6 +17,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'rust-lang/rust.vim'
 "Plugin 'Valloric/YouCompleteMe'
 " Plugin 'davidhalter/jedi-vim'
 
@@ -24,6 +25,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
+filetype plugin indent on
 
 "Doug changes
 set term=screen-256color

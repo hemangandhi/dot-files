@@ -44,3 +44,13 @@ echo "#include <sys/types.h>" | gcc -E -x c - | grep /types.h
 pacman -Syu
 
 #Update everything
+
+sudo systemctl start org.cups.cupsd.service
+
+# start print services, aliased to printers
+
+lpstat -a
+
+# list printers
+
+lpr -P <printer> <file>
