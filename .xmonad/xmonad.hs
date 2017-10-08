@@ -6,13 +6,14 @@ import XMonad.Util.EZConfig (additionalKeys, removeKeys)
 import XMonad.Util.Scratchpad
 import XMonad.Actions.WindowBringer
 import XMonad.Actions.WorkspaceNames
-import XMonad.Actions.Navigation2D
+import XMonad.Layout.WindowNavigation
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.Spiral
 import XMonad.Layout.Grid
 import XMonad.Layout.Tabbed
-import XMonad.Layout.BinarySpacePartition
-import XMonad.Layout.ResizableTile
+import XMonad.Layout.BinarySpacePartition hiding (Swap)
+import XMonad.Layout.Combo
+import XMonad.Layout (Tall)
 import Graphics.X11.ExtraTypes.XF86
 
 import qualified XMonad.StackSet as W
@@ -23,12 +24,12 @@ myBringer = WindowBringerConfig
             , windowTitler = windowTitler (def :: WindowBringerConfig)
             }
 
-myLayouts = (Grid ||| simpleTabbed ||| mySpiral ||| emptyBSP)
+myLayouts = windowNavigation ((myCombo Grid) ||| simpleTabbed ||| mySpiral ||| Grid)
     where nmaster  = 1
           ratio    = 1/2
           delta    = 2/100
           mySpiral = spiral ratio
-          -- myResize = ResizableTall nmaster delta ratio []
+          myCombo  = combineTwo (Tall 1 (3/100) (1/2)) mySpiral
 
 
 main = do
@@ -59,13 +60,17 @@ main = do
          ((0 .|. shiftMask, 0xffc2), sendMessage FirstLayout),
          ((0, 0xff61), spawn "scrot"),
          ((0, 0xff67), spawn "urxvt"),
-         --navigation 2D
-         ((mod4Mask, xK_h), windowGo L True),
-         ((mod4Mask, xK_j), windowGo D True),
-         ((mod4Mask, xK_k), windowGo U True),
-         ((mod4Mask, xK_l), windowGo R True),
-         ((mod4Mask .|. shiftMask, xK_h), windowSwap L True),
-         ((mod4Mask .|. shiftMask, xK_j), windowSwap D True),
-         ((mod4Mask .|. shiftMask, xK_k), windowSwap U True),
-         ((mod4Mask .|. shiftMask, xK_l), windowSwap R True)
+         --window navigation
+         ((mod4Mask, xK_h), sendMessage $ Go L),
+         ((mod4Mask, xK_j), sendMessage $ Go D),
+         ((mod4Mask, xK_k), sendMessage $ Go U),
+         ((mod4Mask, xK_l), sendMessage $ Go R),
+         ((mod4Mask .|. controlMask, xK_h), sendMessage $ Move L),
+         ((mod4Mask .|. controlMask, xK_j), sendMessage $ Move D),
+         ((mod4Mask .|. controlMask, xK_k), sendMessage $ Move U),
+         ((mod4Mask .|. controlMask, xK_l), sendMessage $ Move R),
+         ((mod4Mask .|. shiftMask, xK_h), sendMessage $ Swap L),
+         ((mod4Mask .|. shiftMask, xK_j), sendMessage $ Swap D),
+         ((mod4Mask .|. shiftMask, xK_k), sendMessage $ Swap U),
+         ((mod4Mask .|. shiftMask, xK_l), sendMessage $ Swap R)
          ]
