@@ -27,3 +27,24 @@ rng () {
         exit
     fi
 }
+
+wifi () {
+    ps ax | grep dhcpcd | head -1 | grep wlp3s0
+    if [ 0 -ne $? ]; then
+        sudo wpa_supplicant -B -i wlp3s0 -c ~/ru.conf
+        sudo dhcpcd wlp3s0
+    fi
+
+    sudo wpa_cli status | grep "COMPLETED"
+    while [ $? -ne 0 ]; do
+        sudo wpa_cli status
+        date
+        sleep 2;
+        sudo wpa_cli status | grep "COMPLETED"
+    done
+
+    ping www.google.com
+    while [ $? -ne 0 ]; do
+        ping www.google.com
+    done
+}

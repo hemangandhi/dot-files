@@ -24,12 +24,12 @@ myBringer = WindowBringerConfig
             , windowTitler = windowTitler (def :: WindowBringerConfig)
             }
 
-myLayouts = windowNavigation ((myCombo Grid) ||| simpleTabbed ||| mySpiral ||| Grid)
+myLayouts = windowNavigation ((myCombo mySpiral) ||| simpleTabbed ||| mySpiral ||| Grid)
     where nmaster  = 1
           ratio    = 1/2
           delta    = 2/100
           mySpiral = spiral ratio
-          myCombo  = combineTwo (Tall 1 (3/100) (1/2)) mySpiral
+          myCombo  = combineTwo (Tall 1 (3/100) (1/2)) Grid
 
 
 main = do

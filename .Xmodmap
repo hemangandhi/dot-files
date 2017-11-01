@@ -1,4 +1,5 @@
 keycode 66 = Escape
 keycode 9 = Caps_Lock
+keycode 108 = Multi_key
 clear Lock
 add Lock = Caps_Lock
