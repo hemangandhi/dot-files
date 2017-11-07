@@ -45,6 +45,8 @@ wifi () {
 
     ping www.google.com
     while [ $? -ne 0 ]; do
+        date
+        sleep 2;
         ping www.google.com
     done
 }

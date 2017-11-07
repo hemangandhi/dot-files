@@ -13,7 +13,7 @@ import XMonad.Layout.Grid
 import XMonad.Layout.Tabbed
 import XMonad.Layout.BinarySpacePartition hiding (Swap)
 import XMonad.Layout.Combo
-import XMonad.Layout (Tall)
+import XMonad.Layout (Tall, Mirror)
 import Graphics.X11.ExtraTypes.XF86
 
 import qualified XMonad.StackSet as W
@@ -24,7 +24,7 @@ myBringer = WindowBringerConfig
             , windowTitler = windowTitler (def :: WindowBringerConfig)
             }
 
-myLayouts = windowNavigation ((myCombo mySpiral) ||| simpleTabbed ||| mySpiral ||| Grid)
+myLayouts = windowNavigation ((myCombo $ Mirror mySpiral) ||| simpleTabbed ||| mySpiral ||| Grid)
     where nmaster  = 1
           ratio    = 1/2
           delta    = 2/100
