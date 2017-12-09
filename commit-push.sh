@@ -30,6 +30,8 @@ cp -r ~/.config/zathura .config/
 cp -r ~/.config/i3 .config/
 cp -r ~/.xmonad .
 
+cat ~/.muttrc | grep -v pass | grep -v spoolfile > .muttrc
+
 git add -A
 git commit -m "$1"
 git push
