@@ -7,6 +7,9 @@ URxvt.font: xft:NimbusMonoPs:size=12
 URxvt.letterspace: -1
 URxvt.scrollBar: false
 
+xterm*background: black
+xterm*foreground: white
+
 rofi.color-enabled: true
 ! Molokai theme
 rofi.color-normal:                   argb:00272822, #f8f8f2, argb:00272822, #141411, #f8f8f2

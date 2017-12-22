@@ -27,6 +27,7 @@ cp -r ~/.config/sway .config/
 cp -r ~/.config/xmobar .config/
 cp -r ~/.config/backgrounds .config/
 cp -r ~/.config/zathura .config/
+cp -r ~/.config/i3 .config/
 cp -r ~/.xmonad .
 
 cat ~/.muttrc | grep -v pass | grep -v spoolfile > .muttrc

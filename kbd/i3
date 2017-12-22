@@ -1,0 +1,24 @@
+mod = windows key
+
+<mod-#> = move to workspace #
+<shift-mod-#> = move current window to workspace #
+<mod-shift-enter> = open terminal
+<mod-j> = move to window down
+<mod-k> = move to window up
+<mod-h> = move to window left
+<mod-l> = move to window right
+
+<mod-shift-[as above]> = move window to [as above]
+
+<mod-r> = resize mode
+   h, j, k, l work as expected
+
+<shift-mod-q> = close window
+<mod-s> = stacked
+<mod-w> = tabbed
+<mod-e> = default
+<mod-f> = fullscreen
+
+<mod-v> = vertical split hereafter
+<mod-;> = horizontal split hereafter
+
