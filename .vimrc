@@ -187,3 +187,5 @@ nnoremap <Leader>M :set mouse=""<CR>
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+hi Normal guibg=None ctermbg=None
