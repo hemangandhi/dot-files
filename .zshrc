@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/cuda/bin/:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 #bindkey -v
 export KEYTIMEOUT=1
 

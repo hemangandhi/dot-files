@@ -1,5 +1,5 @@
 set nocompatible
-filetype plugin on
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,12 +17,15 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'rust-lang/rust.vim'
 
 " Color Themes
 Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
+
+filetype plugin indent on
 
 "Doug changes
 set term=screen-256color
@@ -30,12 +33,11 @@ set t_Co=256
 setlocal foldmethod=syntax
 
 colorscheme Monokai
-filetype plugin indent on
 
 let mapleader = ','
 "make my old thing happier.
 let g:jedi#rename_command = "<leader>c"
-""""""""
+
 if has('autocmd')
   filetype plugin indent on
 endif
@@ -125,6 +127,9 @@ let g:did_UltiSnips_vim_after = 1
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+"Syntastic
+let g:syntastic_rust_checkers = ["cargo"]
 
 "
 " Basic shortcuts definitions
