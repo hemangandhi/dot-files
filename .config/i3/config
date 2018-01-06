@@ -132,6 +132,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym XF86AudioMute exec "amixer sset Master toggle && amixer sset Speaker toggle"
 bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-"
 bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+"
+#print screen
+bindsym Print exec "scrot"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
