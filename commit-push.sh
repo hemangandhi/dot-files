@@ -4,6 +4,7 @@ cp ~/.tmux.conf .
 cp ~/.vimrc .
 cp ~/.inputrc .
 cp ~/.zshrc .
+cp ~/.xprofile .
 cp ~/.xinitrc .
 cp ~/.Xresources .
 cp ~/.Xmodmap .

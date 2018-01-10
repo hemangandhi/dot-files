@@ -88,7 +88,7 @@ disk "/" {
 volume master {
     format = "%volume on "
     format_muted = "off "
-    device = "sysdefault"
+    device = "hw:0"
     mixer = "Master"
     mixer_idx = 0
 }
