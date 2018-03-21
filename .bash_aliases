@@ -17,6 +17,7 @@ calc(){
 alias l='ls'
 export WWW_HOME="http://www.google.com"
 export TERMINAL=xterm
+export GOPATH="$HOME/go"
 
 al () {
     alias | grep "$1"

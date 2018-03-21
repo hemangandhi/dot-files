@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/usr/local/cuda/bin/:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:/usr/local/cuda/bin/:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin:/usr/lib/go-1.9/bin
 #bindkey -v
 export KEYTIMEOUT=1
 
@@ -107,7 +106,7 @@ background (){
     ("$@" &!) 2> /dev/null
 }
 
-alias -s pdf='background apvlv'
+alias -s pdf='background zathura'
 alias -s {c,h,cpp,py,js,tex,csv,hs,txt}=vim
 alias -s {png,jpg}='background gimp'
 alias copy='xclip -in -selection clipboard <'
