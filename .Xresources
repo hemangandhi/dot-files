@@ -3,8 +3,8 @@ URxvt*background: rgba:0000/0000/0200/c800
 URxvt*foreground: rgba:ffff/ffff/ffff/ffff
 URxvt.color12: rgb:5c/5c/ff
 URxvt.intensityStyles: false
-URxvt.font: xft:FreeSerif:size=12
-URxvt.letterspace: -1
+URxvt.font: xft:DejaVuSansMono:size=12
+URxvt.letterspace: -2
 URxvt.scrollBar: false
 
 rofi.color-enabled: true

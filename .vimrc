@@ -6,7 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " ------Plugins-------
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'gcmt/breeze.vim'
@@ -112,7 +112,8 @@ set completeopt=menuone,longest,preview
 "
 
 " NERDTree
-nnoremap <Leader>t :NERDTreeToggle<CR>
+" nnoremap <Leader>t :NERDTreeToggle<CR>
+" let NERDTreeHijackNetrw=1
 
 " CtrlP
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
