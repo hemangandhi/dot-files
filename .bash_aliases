@@ -43,3 +43,8 @@ vim () {
     fi
 
 }
+
+notify_finish() {
+    echo "$@" | zsh
+    notify-send "Done: $@" || notify-send "Finished"
+}
