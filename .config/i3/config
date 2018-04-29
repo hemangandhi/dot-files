@@ -179,4 +179,4 @@ bar {
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-exec /home/heman/.local/bin/Rambox-0.5.14/rambox
+#exec /home/heman/.local/bin/Rambox-0.5.14/rambox

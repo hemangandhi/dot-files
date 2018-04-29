@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-obsession'
 Plugin 'gcmt/breeze.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
@@ -97,10 +98,11 @@ set hidden
 " vnoremap <C-S> <C-C>:update<CR>
 " inoremap <C-S> <Esc>:update<CR>
 
-set nobackup
-set nowritebackup
-set noswapfile
 set fileformats=unix,dos,mac
+set directory=$HOME/.vim/swapfiles//
+
+let &undodir="$HOME/.vim/undodir/"
+set undofile
 
 " exit insert mode
 inoremap <Leader>e <Esc>
@@ -174,8 +176,7 @@ let g:airline#extensions#tabline#enabled = 1
 " inoremap <C-x>  <Esc>:tabclose<CR>i
 
 " lazy ':'
-
-map \ :
+nnoremap <CR> :
 
 nnoremap <Leader><tab> :set tabstop=2 shiftwidth=2<CR>
 nnoremap <Leader>p :set paste<CR>
