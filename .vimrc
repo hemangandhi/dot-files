@@ -41,6 +41,7 @@ let g:jedi#rename_command = "<leader>c"
 
 if has('autocmd')
   filetype plugin indent on
+  autocmd BufEnter * silent! lcd %:p:h
 endif
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
@@ -176,7 +177,7 @@ let g:airline#extensions#tabline#enabled = 1
 " inoremap <C-x>  <Esc>:tabclose<CR>i
 
 " lazy ':'
-nnoremap <CR> :
+nnoremap ; :
 
 nnoremap <Leader><tab> :set tabstop=2 shiftwidth=2<CR>
 nnoremap <Leader>p :set paste<CR>
@@ -195,4 +196,4 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-hi Normal guibg=None ctermbg=None
+" hi Normal guibg=None ctermbg=None

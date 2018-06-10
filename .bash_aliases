@@ -18,7 +18,14 @@ calc(){
 alias l='ls'
 export WWW_HOME="http://www.google.com"
 export TERMINAL=xterm
-export GOPATH="$HOME/go"
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+
+if [ -n "$DISPLAY" ]; then
+    export BROWSER=firefox-nightly
+else
+    export BROWSER=lynx
+fi
 
 al () {
     alias | grep "$1"
@@ -28,7 +35,9 @@ set_brt () {
     echo "$1" |sudo tee /sys/class/backlight/intel_backlight/brightness
 }
 
-eval $(thefuck --alias ugh)
+alias get_brt='cat /sys/class/backlight/intel_backlight/brightness'
+
+# eval $(thefuck --alias ugh)
 
 vim () {
     VIM_SESSION_DIR="$HOME/.vim/sessions/"
@@ -48,3 +57,5 @@ notify_finish() {
     echo "$@" | zsh
     notify-send "Done: $@" || notify-send "Finished"
 }
+
+alias lynx="lynx -cfg ~/.config/lynx.cfg"

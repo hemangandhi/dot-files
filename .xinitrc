@@ -1,8 +1,8 @@
 xrdb -merge ~/.Xresources
 xmodmap ~/.Xmodmap
-compton --config ~/.config/compton.conf -cb
+#compton --config ~/.config/compton.conf -cb
 
-syndaemon -i 1 -d -K
+#syndaemon -i 1 -d -K
 
 feh -D 60 --randomize --bg-scale ~/.config/backgrounds/*
 exec i3
