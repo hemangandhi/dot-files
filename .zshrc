@@ -1,11 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/usr/local/cuda/bin/:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin:/usr/lib/go-1.9/bin:$HOME/.cargo/bin
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:/usr/local/cuda-8.0/bin/:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin
 #bindkey -v
 export KEYTIMEOUT=1
 
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH=/ilab/users/hcg19/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -106,7 +107,7 @@ background (){
     ("$@" &!) 2> /dev/null
 }
 
-alias -s pdf='background zathura'
+alias -s pdf='background apvlv'
 alias -s {c,h,cpp,py,js,tex,csv,hs,txt}=vim
 alias -s {png,jpg}='background gimp'
 alias copy='xclip -in -selection clipboard <'
