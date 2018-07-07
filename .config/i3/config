@@ -174,7 +174,7 @@ bindsym $mod+r mode "resize"
 bar {
         font pango:monospace 14
         position bottom
-        status_command i3status
+        status_command i3status -c ~/.config/i3/i3status.conf
         mode hide
 }
 
