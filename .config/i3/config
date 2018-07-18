@@ -27,13 +27,15 @@ font pango:monospace 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 hide_edge_borders both
-new_window 1pixel
+default_border none
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+focus_follows_mouse no
+
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill

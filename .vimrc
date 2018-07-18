@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-obsession'
 Plugin 'gcmt/breeze.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
@@ -28,8 +29,8 @@ call vundle#end()
 filetype plugin indent on
 
 "Doug changes
-" set term=screen-256color
-" set t_Co=256
+set term=screen-256color
+set t_Co=256
 setlocal foldmethod=syntax
 
 colorscheme Monokai
@@ -40,6 +41,7 @@ let g:jedi#rename_command = "<leader>c"
 
 if has('autocmd')
   filetype plugin indent on
+  autocmd BufEnter * silent! lcd %:p:h
 endif
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
@@ -97,10 +99,11 @@ set hidden
 " vnoremap <C-S> <C-C>:update<CR>
 " inoremap <C-S> <Esc>:update<CR>
 
-set nobackup
-set nowritebackup
-set noswapfile
 set fileformats=unix,dos,mac
+set directory=$HOME/.vim/swapfiles//
+
+let &undodir="$HOME/.vim/undodir/"
+set undofile
 
 " exit insert mode
 inoremap <Leader>e <Esc>
@@ -174,8 +177,7 @@ let g:airline#extensions#tabline#enabled = 1
 " inoremap <C-x>  <Esc>:tabclose<CR>i
 
 " lazy ':'
-
-map \ :
+nnoremap ; :
 
 nnoremap <Leader><tab> :set tabstop=2 shiftwidth=2<CR>
 nnoremap <Leader>p :set paste<CR>
@@ -194,4 +196,4 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-hi Normal guibg=None ctermbg=None
+" hi Normal guibg=None ctermbg=None
