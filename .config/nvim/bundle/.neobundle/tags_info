@@ -1,0 +1,14 @@
+breeze.vim
+ctrlp.vim
+neobundle.vim
+neomake
+rust.vim
+tcomment_vim
+ultisnips
+vim-airline
+vim-airline-themes
+vim-colorschemes
+vim-gitgutter
+vim-obsession
+vim-prosession
+vim-surround

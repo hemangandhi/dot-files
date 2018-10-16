@@ -57,3 +57,6 @@ Panes:
 <c-w> - = vertical decrease
 <c-w> > = horiz increase
 <c-w> < = horiz decrease
+
+Neovim:
+Terminal: <C-\><c-n> = normal mode
