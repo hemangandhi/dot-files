@@ -110,3 +110,8 @@ alias -s pdf='background zathura'
 alias -s {c,h,cpp,py,js,tex,csv,hs,txt}=vim
 alias -s {png,jpg}='background gimp'
 alias copy='xclip -in -selection clipboard <'
+
+
+export PATH="/home/heman/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

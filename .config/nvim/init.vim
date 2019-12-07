@@ -4,6 +4,7 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 NeoBundle 'neomake/neomake'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'dhruvasagar/vim-prosession', {'depends': 'tpope/vim-obsession'}
@@ -23,9 +24,20 @@ call neobundle#end()
 
 filetype plugin indent on
 
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#rust#racer_binary = '/home/heman/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust'
+let g:deoplete#sources#rust#rust_source_path = '/home/heman/.cargo/bin/racer'
+
+" python
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python'
+
+call neomake#configure#automake('w')
+let g:neomake_error_sign = { 'text': 'X', 'texthl': 'GitGutterDelete' }
+
 "Doug changes
 "set term=screen-256color
-set t_Co=256
+"set t_Co=256
 setlocal foldmethod=syntax
 
 colorscheme Monokai
@@ -101,6 +113,7 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
 
 "Syntastic

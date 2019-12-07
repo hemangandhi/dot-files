@@ -18,3 +18,6 @@ rofi.color-active:                   argb:00272822, #a6e22a, argb:00272822, #141
 rofi.color-window:                   argb:80272822, #002b36, #eedb74
 ! "Separator style (none, dash, solid)" Set from: File
 rofi.separator-style:                solid
+
+XTerm.vt100.reverseVideo: true
+XTerm.vt100.locale: true

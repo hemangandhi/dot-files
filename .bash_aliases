@@ -59,3 +59,4 @@ notify_finish() {
 }
 
 alias lynx="lynx -cfg ~/.config/lynx.cfg"
+alias vim=nvim
