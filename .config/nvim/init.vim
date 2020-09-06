@@ -16,6 +16,7 @@ NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'sbdchd/neoformat'
 
 " Color Themes
 NeoBundle 'flazz/vim-colorschemes'
