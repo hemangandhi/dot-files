@@ -4,16 +4,12 @@ These are my dot files and they mostly suck.
 
 But they make me happy.
 
-The `kbd` folder has a few sparse notes.
+The `kbd` folder has a few sparse notes. (That are slightly out of date.)
 
 The `commit-push.sh` script is solvenly and trash and mostly works for me.
 
 The `colors` and `ftplugin` folders go under the `~/.vim` directory if you wanna.
 
-## I use arch
+### Haha nix go brr. So the `nix-envs` dir has a useful README.
 
-... so somethings are seriously janky. I'll mention things in the `kbd` directory when I feel like it.
-
-## I use arch
-
-... so somethings are seriously janky. I'll mention things in the `kbd` directory when I feel like it.
+(Because I like to debug my package managment.)
