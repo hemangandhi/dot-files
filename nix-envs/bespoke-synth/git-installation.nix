@@ -42,6 +42,7 @@ stdenv.mkDerivation {
   configurePhase = "cmake -B ignore/build";
   buildPhase = "cmake --build ignore/build";
   installPhase = ''
+    ls -R ignore/build/BespokeSynth_artefacts
     mv ignore/build/BespokeSynth_artefacts/Release $out
   '';
 }

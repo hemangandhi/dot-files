@@ -35,7 +35,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -124,7 +124,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 #rename workspace
-bindsym $mod+comma exec i3-input -F 'rename workspace to "%s"' -P 'New name:'
+bindsym $mod+x exec i3-input -F 'rename workspace to "%s"' -P 'New name:'
 
 #mark windows
 bindsym $mod+m exec i3-input -F 'mark "%s"' -P 'Mark:'
@@ -184,4 +184,6 @@ bar {
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-exec redshift -t 3000:1000 -l 40:-74 &> /dev/null
+# move wrokspaces between displays
+bindsym $mod+greater move workspace to output right
+bindsym $mod+less move workspace to output left

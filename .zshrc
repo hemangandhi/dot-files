@@ -56,9 +56,10 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #
-plugins=(web-search urltools globalias git vi-mode)
 
-source $ZSH/oh-my-zsh.sh
+# NIXOS senpai notices these:
+# plugins=(web-search urltools globalias git vi-mode)
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -99,7 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # zle -N zle-keymap-select
 
 zstyle ':completion:*' menu select
-export TZ="/usr/share/zoneinfo/America/New_York"
 source ~/.bash_aliases
 
 background (){
@@ -107,11 +107,11 @@ background (){
 }
 
 alias -s pdf='background zathura'
-alias -s {c,h,cpp,py,js,tex,csv,hs,txt}=vim
+alias -s {c,h,cpp,py,js,tex,csv,hs,txt}=emacs
 alias -s {png,jpg}='background gimp'
 alias copy='xclip -in -selection clipboard <'
 
-
-export PATH="/home/heman/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# pyenv wa mada mada desu
+# export PATH="/home/heman/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"

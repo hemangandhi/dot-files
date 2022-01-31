@@ -15,5 +15,5 @@ This directory has a bunch of things I'll install temporarily for projects/tasks
 | --- | --- | --- |
 | Rust | `nix-shell $THIS_DIR/rust.nix` | This is the quick-n-dirty version |
 | Rustup | `nix-shell $THIS_DIR/rustup.nix` | This helps deal with other non-nix people's versions of Rust things |
-| Editing sheet music | `nix-shell -p lilypad` | |
+| Editing sheet music | `nix-shell -p lilypond` | |
 | OBS Studio | `nix-shell $THIS_DIR/obs-studio.nix` | Be sure to `nvidia-offload` |

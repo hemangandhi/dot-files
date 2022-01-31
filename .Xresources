@@ -1,23 +1,2 @@
-URxvt*depth: 32
-URxvt*background: rgba:0000/0000/0200/c800
-URxvt*foreground: rgba:ffff/ffff/ffff/ffff
-URxvt.color12: rgb:5c/5c/ff
-URxvt.intensityStyles: false
-URxvt.font: xft:DejaVuSansMono:size=14
-URxvt.letterspace: -2
-URxvt.scrollBar: false
-
-rofi.color-enabled: true
-! Molokai theme
-rofi.color-normal:                   argb:00272822, #f8f8f2, argb:00272822, #141411, #f8f8f2
-! "Color scheme for urgent row" Set from: File
-rofi.color-urgent:                   argb:00272822, #f92672, argb:00272822, #f92672, #f8f8f2
-! "Color scheme for active row" Set from: File
-rofi.color-active:                   argb:00272822, #a6e22a, argb:00272822, #141411, #a6e22a
-! "Color scheme window" Set from: File
-rofi.color-window:                   argb:80272822, #002b36, #eedb74
-! "Separator style (none, dash, solid)" Set from: File
-rofi.separator-style:                solid
-
-XTerm.vt100.reverseVideo: true
-XTerm.vt100.locale: true
+xterm*Background:black
+xterm*Foreground:white
