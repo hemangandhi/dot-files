@@ -1,17 +1,32 @@
-with import <nixpkgs> {};
-
-stdenv.mkDerivation {
+let
+  rust_overlay = import (builtins.fetchTarball https://github.com/oxalica/rust-overlay/archive/master.tar.gz);
+  nixpkgs = import <nixpkgs> { overlays = [ rust_overlay ]; };
+  rust_of_choice = nixpkgs.rust-bin.stable.latest.rust.override {
+    extensions = ["rust-src"];
+  };
+  nvim = import ./nvim.nix ( rec {
+    nixPkgs = nixpkgs;
+    neovim = nixpkgs.neovim;
+    customPackages = with nixpkgs.vimPlugins; {
+      start = [
+        rust-vim
+        coc-rust-analyzer
+      ];
+    };
+  }); in
+nixpkgs.stdenv.mkDerivation {
   name = "rust-env";
   buildInputs = [
-    # editor
-    vimPlugins.rust-vim
     # linter
-    clippy
+    nixpkgs.clippy
     # builder
-    cargo
+    nixpkgs.cargo
     # compiler
-    rustc
+    rust_of_choice
     # formatter
-    rustfmt
+    # editor
+    nvim
+    # coc needs this
+    nixpkgs.nodejs
   ];
 }

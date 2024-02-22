@@ -7,6 +7,6 @@ stdenv.mkDerivation {
   name = "sukuraberu-dev-env";
   buildInputs = [
     # Python
-    python3    
+    python3
   ];
 }
