@@ -5,6 +5,9 @@
 -- By default the sign column is only shown if there are signs to show,
 -- which means the buffer will constantly jump right and left.
 vim.opt.signcolumn = "yes:1"
+-- Cursor column is useful for tactic proofs.
+vim.opt.cursorcolumn = true
+vim.g.mapleader = " "
 
 -- Enable nvim-cmp, with 3 completion sources, including LSP
 --local cmp = require'cmp'

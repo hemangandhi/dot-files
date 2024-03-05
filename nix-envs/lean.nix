@@ -6,6 +6,7 @@ let
     customPackages = with nixpkgs.vimPlugins; {
       start = [
         plenary-nvim
+        telescope-nvim
         lean-nvim
       ];
     };
