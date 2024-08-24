@@ -36,6 +36,7 @@ nixpkgs.stdenv.mkDerivation {
     nixpkgs.pkg-config
     # russimp's error message and raylib
     nixpkgs.glibc
+    nixpkgs.assimp
     nixpkgs.libclang
     nixpkgs.llvmPackages_12.libcxxClang
     # raylib -- also https://discourse.nixos.org/t/problems-building-raylib-rs/45142
@@ -47,10 +48,12 @@ nixpkgs.stdenv.mkDerivation {
     nixpkgs.xorg.libXi
     # embree itself
     nixpkgs.embree
+    # rust-rendering? Needs -lz, not sure if it's just Rust.
+    nixpkgs.zlib
   ];
   # also raylib -- also https://discourse.nixos.org/t/problems-building-raylib-rs/45142
-  # TODO: update this when using 20.04; it's nixpkgs.libclang.lib
-  LIBCLANG_PATH = "${nixpkgs.llvmPackages_11.libclang.lib}/lib";
+  LIBCLANG_PATH = "${nixpkgs.libclang.lib}/lib";
   # bindgen? bindgen inside raylib? https://github.com/NixOS/nixpkgs/issues/52447#issuecomment-853429315
-  BINDGEN_EXTRA_CLANG_ARGS = "-isystem ${nixpkgs.llvmPackages.libclang.lib}/lib/clang/${nixpkgs.lib.getVersion nixpkgs.clang}/include";
+  BINDGEN_EXTRA_CLANG_ARGS = "-isystem ${nixpkgs.llvmPackages.libclang.lib}/lib/clang/17/include -isystem ${nixpkgs.glibc.dev}/include";
+  RUST_EMBREE_RTCORE_HEADER_PATH = "${nixpkgs.embree}/include/embree4/rtcore.h";
 }
