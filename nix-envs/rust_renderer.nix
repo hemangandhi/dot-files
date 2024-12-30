@@ -50,10 +50,14 @@ nixpkgs.stdenv.mkDerivation {
     nixpkgs.embree
     # rust-rendering? Needs -lz, not sure if it's just Rust.
     nixpkgs.zlib
+    # rust-rendering main
+    nixpkgs.gtk4
+    nixpkgs.libxkbcommon
   ];
   # also raylib -- also https://discourse.nixos.org/t/problems-building-raylib-rs/45142
   LIBCLANG_PATH = "${nixpkgs.libclang.lib}/lib";
   # bindgen? bindgen inside raylib? https://github.com/NixOS/nixpkgs/issues/52447#issuecomment-853429315
   BINDGEN_EXTRA_CLANG_ARGS = "-isystem ${nixpkgs.llvmPackages.libclang.lib}/lib/clang/17/include -isystem ${nixpkgs.glibc.dev}/include";
   RUST_EMBREE_RTCORE_HEADER_PATH = "${nixpkgs.embree}/include/embree4/rtcore.h";
+  LD_LIBRARY_PATH = "${nixpkgs.libxkbcommon}/lib";
 }
