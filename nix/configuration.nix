@@ -8,23 +8,28 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./heman-kojin-config.nix
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.blacklistedKernelModules = [ "snd_pcsp" ];
+  boot.extraModprobeConfig = ''
+    options snd slots=sof-hda-dsp
+    '';
 
-  networking.hostName = "heman-nixos"; # Define your hostname.
+  networking.hostName = "heman-nixos-galaxy"; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.interfaces = [ "wlo1" ];
+
+  # Set your time zone.
+  time.timeZone = "Asia/Tokyo";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.enp2s0.useDHCP = true;
-  networking.interfaces.wlp3s0.useDHCP = true;
+  networking.interfaces.wlo1.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -37,58 +42,30 @@
     keyMap = "us";
   };
 
-  # Set your time zone.
-  time.timeZone = "America/New_York";
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget emacs
-  ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  #   pinentryFlavor = "gnome3";
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # Nihongo jyouzu
+  i18n.inputMethod.enabled = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-mozc ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.layout = "us";
-  services.xserver.videoDrivers = [ "modesetting" "nvidia"];
-  hardware.nvidia.optimus_prime = {
-   enable = true;
-   nvidiaBusId = "PCI:1:0:0";
-   intelBusId = "PCI:0:2:0";
-  };
-  # services.xserver.xkbOptions = "eurosign:e";
 
-  # Enable touchpad support.
-  services.xserver.libinput.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
+  # Configure keymap in X11
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.options = "eurosign:e";
 
-  services.xserver.displayManager.defaultSession = "none+i3";
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound. TODO: update this for 24.11
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.extraConfig = "unload-module module-suspend-on-idle";
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
+
+  services.displayManager.defaultSession = "niri";
+  # Kept incase of the need to switch.
   services.xserver.windowManager.i3 = {
     enable = true;
     extraPackages = with pkgs; [
@@ -96,18 +73,57 @@
     ];
   };
 
+  services.displayManager.sessionPackages = [ pkgs.niri ];
+  #programs.wayland.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.heman = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.zsh;
   };
 
-  # nvidia, fuck you
-  nixpkgs.config.allowUnfree = true;
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.extraPackages = with pkgs; [ linuxPackages.nvidia_x11.out ];
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    neovim
+    wget
+    git
+    home-manager
+
+    # For niri
+    niri
+    fuzzel
+    swaylock
+    xwayland-satellite
+    xwayland
+    waybar
+    font-awesome
+  ];
+
+  programs.zsh.enable = true;
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = [ "globalias" "git" ];
+  };
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -115,7 +131,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.03"; # Did you read the comment?
+  system.stateVersion = "21.05"; # Did you read the comment?
 
 }
 
