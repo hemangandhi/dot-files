@@ -56,10 +56,13 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound. TODO: update this for 24.11
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
-  # hardware.pulseaudio.extraConfig = "unload-module module-suspend-on-idle";
+  # Enable sound.
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+  hardware.pulseaudio.extraConfig = "unload-module module-suspend-on-idle";
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -74,7 +77,6 @@
   };
 
   services.displayManager.sessionPackages = [ pkgs.niri ];
-  #programs.wayland.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.heman = {
@@ -98,7 +100,15 @@
     xwayland
     waybar
     font-awesome
+    wl-clipboard
   ];
+
+  # Thanks to https://github.com/swaywm/sway/issues/2773#issuecomment-427570877
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
 
   programs.zsh.enable = true;
   programs.zsh.ohMyZsh = {
