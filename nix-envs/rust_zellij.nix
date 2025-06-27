@@ -32,5 +32,11 @@ nixpkgs.stdenv.mkDerivation {
     nvim
     # coc needs this
     nixpkgs.nodejs
+
+    # testing Zellij needs this?
+    # From https://github.com/sfackler/rust-openssl/issues/1663#issuecomment-1235973065
+    nixpkgs.libiconv
+    nixpkgs.openssl
+    nixpkgs.pkg-config
   ];
 }
