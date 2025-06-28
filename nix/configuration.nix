@@ -92,7 +92,11 @@
     git
     home-manager
 
-    # For niri
+    # Audio stuff
+    pavucontrol
+    pwvucontrol
+
+    # For niri and wayland.
     niri
     fuzzel
     swaylock
