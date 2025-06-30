@@ -105,6 +105,7 @@
     waybar
     font-awesome
     wl-clipboard
+    killall
   ];
 
   # Thanks to https://github.com/swaywm/sway/issues/2773#issuecomment-427570877
