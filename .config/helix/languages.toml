@@ -1,0 +1,19 @@
+[[language]]
+name = "python"
+language-servers = ["ruff", "jedi", "pylsp", "pyright"]
+
+# [language-server.pylsp]
+# command = "/home/mujin/.local/bin/pylsp"
+
+[language-server.pylsp.config]
+pylsp.plugins.autopep8.enabled = false
+pylsp.plugins.pycodestyle.enabled = false
+
+
+[[language]]
+name = "markdown"
+language-servers = ["vale"]
+
+# [language-server.vale]
+# command = "/home/mujin/.cargo/bin/vale-ls"
+

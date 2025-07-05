@@ -1,0 +1,22 @@
+theme = "tokyonight"
+
+editor.soft-wrap.enable = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+
+[editor.indent-guides]
+render = true
+character = "|"
+
+[editor.statusline]
+left = ["mode", "file-modification-indicator", "spinner", "version-control"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "register", "position", "file-type"]
+separator = "│"
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+
+[editor.whitespace]
+render = "all"
