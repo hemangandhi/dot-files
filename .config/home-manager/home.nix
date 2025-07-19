@@ -40,6 +40,7 @@
      pkgs.vlc
      pkgs.xorg.xev
      pkgs.contour
+     pkgs.pulseaudio
      # Old packages
      # pkgs.glxinfo
      # pkgs.plover.dev

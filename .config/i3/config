@@ -139,9 +139,9 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #volume ctrl
-bindsym XF86AudioMute exec "amixer sset Master toggle && amixer sset Speaker toggle"
-bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-"
-bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+"
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
 #print screen
 bindsym Print exec "scrot"
 
