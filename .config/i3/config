@@ -35,7 +35,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec contour
 
 # kill focused window
 bindsym $mod+Shift+q kill
