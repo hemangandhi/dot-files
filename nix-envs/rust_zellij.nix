@@ -1,3 +1,5 @@
+# Rust env for developing Zellij
+
 let
   rust_overlay = import (builtins.fetchTarball https://github.com/oxalica/rust-overlay/archive/master.tar.gz);
   nixpkgs = import <nixpkgs> { overlays = [ rust_overlay ]; };
@@ -16,7 +18,7 @@ let
     };
   }); in
 nixpkgs.stdenv.mkDerivation {
-  name = "rust-env";
+  name = "rust-zellij";
   buildInputs = [
     # Zellij WASM I/O
     nixpkgs.protobuf_29
