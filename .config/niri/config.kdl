@@ -279,6 +279,7 @@ binds {
     Mod+T { spawn "contour"; }
     Mod+D { spawn "fuzzel"; }
     Mod+Alt+L { spawn "swaylock"; }
+    Mod+Apostrophe { spawn "bash" "-c" "~/.local/bin/niri-window-search.sh"; }
 
     // You can also use a shell:
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
