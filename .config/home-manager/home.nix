@@ -33,14 +33,14 @@
      pkgs.gimp
      pkgs.google-chrome
      pkgs.libreoffice
-     pkgs.scrot
-     pkgs.signal-desktop
      pkgs.stepmania
      pkgs.unzip
      pkgs.vlc
      pkgs.xorg.xev
      pkgs.contour
      pkgs.pulseaudio
+     pkgs.noto-fonts-cjk-sans
+     pkgs.jq
      # Old packages
      # pkgs.glxinfo
      # pkgs.plover.dev
@@ -48,11 +48,13 @@
      # pkgs.steam
      # pkgs.xorg.xmodmap
      # pkgs.zathura
+     # pkgs.scrot
+     # pkgs.signal-desktop
   ];
 
-  programs.git = {
-    userName = "Heman Gandhi";
-    userEmail = "hemangandhi@gmail.com";
+  programs.git.settings.user = {
+    name = "Heman Gandhi";
+    email = "hemangandhi@gmail.com";
   };
 
   programs.neovim = {
