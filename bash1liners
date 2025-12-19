@@ -54,3 +54,10 @@ lpstat -a
 # list printers
 
 lpr -P <printer> <file>
+
+# Set terminal title
+
+term_title () {
+    ORIG=${PS1}
+    PS1="${ORIG}\[\e]2;$*\a\]"
+}
