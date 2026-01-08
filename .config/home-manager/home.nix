@@ -41,6 +41,7 @@
      pkgs.pulseaudio
      pkgs.noto-fonts-cjk-sans
      pkgs.jq
+     pkgs.jujutsu
      # Old packages
      # pkgs.glxinfo
      # pkgs.plover.dev
@@ -86,6 +87,8 @@ set number
 set hlsearch
 set ignorecase
 set smartcase
+set incsearch
+set inccommand=split
 
 set number
 
