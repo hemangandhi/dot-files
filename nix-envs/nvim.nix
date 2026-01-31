@@ -48,6 +48,8 @@ set completeopt=menuone,longest,preview
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
+colorscheme tokyonight
+
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
@@ -63,6 +65,7 @@ ${extraRC}
         coc-git
         vim-lsp
         vim-nix
+        tokyonight-nvim
         nvim-treesitter
       ] ++ customPackages.start;
     };

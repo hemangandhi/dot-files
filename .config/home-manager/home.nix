@@ -103,6 +103,8 @@ set undofile
 set completeopt=menuone,longest,preview
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+
+colorscheme tokyonight
     '';
 
     # install needed binaries here
@@ -119,7 +121,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 #     coc-git
       vim-lsp
       vim-nix
-      molokai
+      tokyonight-nvim
       nvim-treesitter
     ];
   };
