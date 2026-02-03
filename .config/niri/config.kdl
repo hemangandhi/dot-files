@@ -274,7 +274,7 @@ window-rule {
 }
 
 window-rule {
-    match is-active=false
+    match is-focused=false
 
     opacity 0.96
 }
