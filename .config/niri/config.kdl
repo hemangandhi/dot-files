@@ -11,6 +11,12 @@ environment {
     DISPLAY ":12"
 }
 
+// Backdrop wallpaper.
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
 // I can ride my bike with no handlebars
 hotkey-overlay {
     skip-at-startup
@@ -202,6 +208,13 @@ layout {
         position "left"
         place-within-column
         gaps-between-tabs 6
+    }
+
+    background-color "transparent"
+
+    shadow {
+        on
+        spread 20
     }
 }
 
