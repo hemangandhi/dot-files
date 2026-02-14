@@ -20,7 +20,7 @@ character = "|"
 [editor.statusline]
 left = ["mode", "file-modification-indicator", "spinner", "version-control"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "register", "position", "file-type"]
+right = ["diagnostics", "selections", "register", "position", "position-percentage", "file-type"]
 separator = "│"
 mode.normal = "NOR"
 mode.insert = "INS"
