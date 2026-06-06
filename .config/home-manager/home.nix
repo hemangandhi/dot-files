@@ -43,6 +43,7 @@
      pkgs.noto-fonts-cjk-sans
      pkgs.jq
      pkgs.jujutsu
+     pkgs.swaybg
      # Old packages
      # pkgs.glxinfo
      # pkgs.plover.dev
