@@ -25,6 +25,7 @@
       "discord"
       "google-chrome"
     ];
+    nix.settings.experimental-features = ["nix-command" "flakes"];
   };
 
   home.packages = [
