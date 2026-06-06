@@ -61,6 +61,8 @@
   };
 
   programs.neovim = {
+    withPython3 = true;
+    withRuby = false;
     enable = true;
 
     extraConfig = ''
