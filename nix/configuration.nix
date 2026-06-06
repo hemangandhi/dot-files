@@ -30,7 +30,7 @@
     interfaces = [ "wlp0s20f3" ];
     networks."SSID".psk = "PSK";
 
-    extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
+    # extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
   };
 
 
